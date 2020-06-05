@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: seconds-producer
+  kafka:
+    producer:
+      bootstrap-servers: 172.17.0.1:9092,172.17.0.1:9093,172.17.0.1:9094
+      properties:
+        linger.ms: 1000 #生产者发送间隔配置
+  main:
+    web-application-type: none

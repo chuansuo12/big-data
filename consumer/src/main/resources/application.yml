@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: consumer
+  datasource:
+    url: jdbc:mysql://172.17.0.1:3306/bigdata?serverTimezone=CTT&useUnicode=true&useSSL=false&&characterEncoding=utf8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  kafka:
+    consumer:
+      group-id: big-data-consumer
+      bootstrap-servers: 172.17.0.1:9092,172.17.0.1:9093,172.17.0.1:9094
+  main:
+    web-application-type: none
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
