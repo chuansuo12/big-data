@@ -25,14 +25,14 @@ public class BehaviorProducer implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        String filePath = "/home/chuansuo12/code-project/big-data/plan2/userBehavior/userBehavior";
+        String filePath = "/home/chuansuo12/code-project/big-data/plan3/userBehavior/userBehavior";
         InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(filePath));
         BufferedReader reader = new BufferedReader(inputStreamReader);
         String readStr;
         while ((readStr = reader.readLine()) != null) {
             log.info("read str:{}", readStr);
             kafkaTemplate.send(Topics.USER_BEHAVIOR, readStr);
-            Thread.sleep(500);
+            Thread.sleep(50);
         }
     }
 
